@@ -1,0 +1,14 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.EyeCare" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your dark theme here. -->
+        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="colorPrimary">@color/status_bar_color</item>
+        <item name="colorPrimaryDark">@color/status_bar_color</item>
+        <!-- Status bar color -->
+        <item name="android:statusBarColor">@color/status_bar_color</item>
+        <!-- Light status bar icons -->
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+    <style name="Theme.EyeCare" parent="Base.Theme.EyeCare" />
+</resources>

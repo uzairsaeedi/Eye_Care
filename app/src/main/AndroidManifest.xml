@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/eye_illustration_foreground"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/eye_illustration_round"
+        android:supportsRtl="true"
+        android:theme="@style/Base.Theme.EyeCare">
+        <activity
+            android:name=".LazyEyeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".OddOneOutActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ColorMatchActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ColorCubeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TrackAnimalActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PalminActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ClosedEyeMovement"
+            android:exported="false" />
+        <activity
+            android:name=".KaleidoscopeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HyperopiaPrevention"
+            android:exported="false" />
+        <activity
+            android:name=".FocusShift"
+            android:exported="false" />
+        <activity
+            android:name=".Congratulations"
+            android:exported="false" />
+        <activity
+            android:name=".EyeMuscleTraining"
+            android:exported="false" />
+        <activity
+            android:name=".LandoltActivity"
+            android:exported="false" />
+        <activity
+            android:name=".OKNTestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AstigmatismTestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".VisualAcuity"
+            android:exported="false" />
+        <activity
+            android:name=".Progress"
+            android:exported="false" />
+        <activity
+            android:name=".EyeGames"
+            android:exported="false" />
+        <activity
+            android:name=".EyeExercise"
+            android:exported="false" />
+        <activity
+            android:name=".ResultActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EyeTestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SnellenChartActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PrivacyPolicyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Welcome"
+            android:exported="true"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
+    </application>
+
+</manifest>

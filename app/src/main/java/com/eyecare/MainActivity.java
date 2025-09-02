@@ -1,0 +1,174 @@
+package com.eyecare;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.MenuItem;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationView;
+
+import java.util.ArrayList;
+
+public class MainActivity extends BaseActivity {
+
+    private DrawerLayout drawerLayout;
+    private NavigationView navigationView;
+    private Toolbar toolbar;
+    private RecyclerView listRecyclerView;
+    private TextView tvSeeAll;
+    private BottomNavigationView bottomNav;
+
+    @Override
+    protected boolean isHomeActivity() {
+        return true;
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setTitle("");
+        }
+
+        drawerLayout = findViewById(R.id.drawer_layout);
+        navigationView = findViewById(R.id.nav_view);
+        listRecyclerView = findViewById(R.id.rvItems);
+        tvSeeAll = findViewById(R.id.tvSeeAll);
+
+        tvSeeAll.setOnClickListener(v -> {
+            Intent i = new Intent(MainActivity.this, EyeExercise.class);
+            startActivity(i);
+        });
+
+        TextView tvPercent = findViewById(R.id.tvBannerPercent);
+        tvPercent.setText("0%");
+
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawerLayout, toolbar,
+                R.string.navigation_drawer_open,
+                R.string.navigation_drawer_close);
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                int id = item.getItemId();
+
+                if (id == R.id.nav_home) {
+                    Intent i = new Intent(MainActivity.this, MainActivity.class);
+                    startActivity(i);
+                }
+                else if (id == R.id.nav_remove_ads) {
+                    CustomDialogUtil.showRemoveAdsDialog(MainActivity.this);
+                }
+                else if (id == R.id.nav_rate_us) {
+                    CustomDialogUtil.showRateUsDialog(MainActivity.this);
+                }
+                else if (id == R.id.nav_share_app) {
+                    Intent shareIntent = new Intent(Intent.ACTION_SEND);
+                    shareIntent.setType("text/plain");
+                    String shareBody = "Check out this awesome Eye Care app: https://play.google.com/store/apps/details?id=" + getPackageName();
+                    shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Eye Care App");
+                    shareIntent.putExtra(Intent.EXTRA_TEXT, shareBody);
+                    startActivity(Intent.createChooser(shareIntent, "Share via"));
+                }
+
+                else if (id == R.id.nav_privacy_policy) {
+                    Intent intent = new Intent(MainActivity.this, PrivacyPolicyActivity.class);
+                    startActivity(intent);
+                }
+
+                drawerLayout.closeDrawers();
+                return true;
+            }
+        });
+
+        ArrayList<ListItem> itemList = new ArrayList<>();
+        itemList.add(new ListItem("Snellen Chart", "20 exercises . 20 min", R.mipmap.listitem1_foreground ));
+        itemList.add(new ListItem("Color Blindness", "20 exercises . 20 min", R.mipmap.listitem2_foreground));
+        itemList.add(new ListItem("Landolt", "20 exercises . 20 min", R.mipmap.listitem1_foreground));
+        itemList.add(new ListItem("Visual Acuity", "20 exercises . 20 min", R.mipmap.listitem2_foreground));
+        itemList.add(new ListItem("Astigmatism Test", "20 exercises . 20 min", R.mipmap.listitem1_foreground));
+        itemList.add(new ListItem("Contrast Sensitivity", "20 exercises . 20 min", R.mipmap.listitem2_foreground));
+        itemList.add(new ListItem("OKN Test", "20 exercises . 20 min", R.mipmap.listitem1_foreground));
+
+        ListItemAdapter itemAdapter = new ListItemAdapter(this, itemList);
+        listRecyclerView.setLayoutManager(
+                new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        );
+        listRecyclerView.setAdapter(itemAdapter);
+
+        bottomNav = findViewById(R.id.bottom_nav_include);
+        if (bottomNav != null) {
+            bottomNav.setSelectedItemId(R.id.nav_test);
+
+            bottomNav.setOnItemSelectedListener(menuItem -> {
+                int id = menuItem.getItemId();
+
+                if (id == bottomNav.getSelectedItemId()) {
+                    return true;
+                }
+
+                if (id == R.id.nav_test) {
+                    return true;
+                } else if (id == R.id.nav_exercise) {
+                    startActivity(new Intent(MainActivity.this, EyeExercise.class)
+                            .addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT));
+                    return true;
+                } else if (id == R.id.nav_games) {
+                    startActivity(new Intent(MainActivity.this, EyeGames.class)
+                            .addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT));
+                    return true;
+                } else if (id == R.id.nav_progress) {
+                    startActivity(new Intent(MainActivity.this, Progress.class)
+                            .addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT).putExtra("startTab", 0));
+                    return true;
+                }
+                return false;
+            });
+        }
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        updateProgressPercentAnimated();
+    }
+
+    private void updateProgressPercentAnimated() {
+        int completed = ProgressUtils.getCompletedOverall(this);
+        int total = QuestionBank.getTotalExercises();
+        int newPercent = ProgressUtils.calculatePercent(completed, total);
+
+        TextView tvPercent = findViewById(R.id.tvBannerPercent);
+        String oldText = tvPercent.getText().toString().replace("%","").trim();
+        int oldPercent = 0;
+        try { oldPercent = Integer.parseInt(oldText); } catch (Exception e) { oldPercent = 0; }
+
+        android.animation.ValueAnimator animator = android.animation.ValueAnimator.ofInt(oldPercent, newPercent);
+        animator.setDuration(400);
+        animator.addUpdateListener(animation -> {
+            int animatedValue = (int) animation.getAnimatedValue();
+            tvPercent.setText(animatedValue + "%");
+        });
+        animator.start();
+    }
+
+}

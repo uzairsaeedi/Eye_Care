@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="@drawable/rounded_white_bg">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rate Us"
+        android:textSize="22sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Your Feedback Helps Us Grow."
+        android:textSize="14sp"
+        android:gravity="center" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="If you're enjoying the experience, take a moment to leave a rating and share your thoughts.
+ It helps us improve, grow, and bring you even more of what you love.
+ Every review makes a difference!
+"
+        android:textSize="14sp"
+        android:gravity="center" />
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:stepSize="1"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp" />
+
+    <Button
+        android:id="@+id/btnRateNow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Rate Us Now"
+        android:textColor="@color/black"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/rounded_button_bg" />
+
+    <TextView
+        android:id="@+id/btnRemindLater"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingVertical="10dp"
+        android:text="Remind Me Later"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:background="@drawable/rounded_button_bg_secondary"
+        android:layout_marginTop="10dp"
+        android:clickable="true"
+        android:focusable="true" />
+
+
+</LinearLayout>

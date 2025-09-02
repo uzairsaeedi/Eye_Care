@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@mipmap/home_foreground"
+            android:title="Home" />
+
+        <item
+            android:id="@+id/nav_remove_ads"
+            android:icon="@mipmap/badge_foreground"
+            android:title="Remove Ads" />
+
+        <item
+            android:id="@+id/nav_rate_us"
+            android:icon="@mipmap/star_foreground"
+            android:title="Rate Us" />
+
+        <item
+            android:id="@+id/nav_share_app"
+            android:icon="@mipmap/share_foreground"
+            android:title="Share App" />
+
+        <item
+            android:id="@+id/nav_privacy_policy"
+            android:icon="@mipmap/shield_foreground"
+            android:title="Privacy Policy" />
+    </group>
+
+</menu>

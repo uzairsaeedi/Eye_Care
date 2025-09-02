@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#AEE6FA">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/baseline_arrow_back_24"
+            android:contentDescription="Back"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Privacy Policy"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#000" />
+
+        <!-- Empty space to balance center alignment -->
+        <View
+            android:layout_width="24dp"
+            android:layout_height="24dp" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/privacy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:lineSpacingExtra="4dp"
+                android:text="Privacy Policy" />
+
+            <TextView
+                android:id="@+id/privacy_intro"
+                android:layout_width="match_parent"
+                android:layout_marginTop="20dp"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="#000"
+                android:lineSpacingExtra="4dp"
+                android:text="Introduction" />
+
+            <TextView
+                android:id="@+id/privacy_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:layout_marginTop="10dp"
+                android:textColor="#000"
+                android:lineSpacingExtra="4dp"
+                android:text="We built the Eye Test App as a free application. This SERVICE is provided at no cost and is intended for use as is."
+                android:scrollHorizontally="false" />
+            <TextView
+                android:id="@+id/privacy_text2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="#000"
+                android:lineSpacingExtra="4dp"
+                android:text="This Privacy Policy is designed to inform users about our policies regarding the collection, use, and disclosure of Personal Information for anyone choosing to use our Service."
+                android:scrollHorizontally="false" />
+            <TextView
+                android:id="@+id/privacy_text3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="#000"
+                android:lineSpacingExtra="4dp"
+                android:text="Consent to Collection and Use of Information"
+                android:scrollHorizontally="false" />
+            <TextView
+                android:id="@+id/privacy_text4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="#000"
+                android:lineSpacingExtra="4dp"
+                android:text="By using our Service, you agree to the collection and use of information in accordance with this Privacy Policy. The Personal Information we collect is used exclusively for the purpose of providing and improving the Service."
+                android:scrollHorizontally="false" />
+            <TextView
+                android:id="@+id/privacy_text5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="#000"
+                android:lineSpacingExtra="4dp"
+                android:text="We do not share or sell your information to any third party, except as described in this Privacy Policy."
+                android:scrollHorizontally="false" />
+            <TextView
+                android:id="@+id/privacy_text6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="#000"
+                android:lineSpacingExtra="4dp"
+                android:text="Information Collection and Use"
+                android:scrollHorizontally="false" />
+            <TextView
+                android:id="@+id/privacy_text7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="#000"
+                android:lineSpacingExtra="4dp"
+                android:text="For a better experience, while using our Service, we may ask you to provide us with certain personally identifiable information. This may include, but is not limited to:"
+                android:scrollHorizontally="false" />
+            <TextView
+                android:id="@+id/privacy_text8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="#000"
+                android:lineSpacingExtra="4dp"
+                android:text="Device information"
+                android:scrollHorizontally="false" />
+            <TextView
+                android:id="@+id/privacy_text9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="#000"
+                android:lineSpacingExtra="4dp"
+                android:text="Log data"
+                android:scrollHorizontally="false" />
+            <TextView
+                android:id="@+id/privacy_text10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="#000"
+                android:lineSpacingExtra="4dp"
+                android:text="Usage statistics"
+                android:scrollHorizontally="false" />
+            <TextView
+                android:id="@+id/privacy_text11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="#000"
+                android:lineSpacingExtra="4dp"
+                android:text="Location (if permission is granted)"
+                android:scrollHorizontally="false" />
+            <TextView
+                android:id="@+id/privacy_text12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="#000"
+                android:lineSpacingExtra="4dp"
+                android:text="The information we request is retained on your device and not collected by us in any way unless explicitly mentioned."
+                android:scrollHorizontally="false" />
+        </LinearLayout>
+    </ScrollView>
+
+    <include
+        android:id="@+id/bottom_nav_include"
+        layout="@layout/custom_bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

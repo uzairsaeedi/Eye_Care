@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="320dp"
+    android:height="320dp"
+    android:viewportWidth="512"
+    android:viewportHeight="512">
+
+    <!-- Outer big petal (base) - will be rotated copies visually -->
+    <path
+        android:name="outer_petal"
+        android:fillColor="#FF6B8A"
+    android:pathData="M256,64 C296,64 360,160 256,220 C152,160 216,64 256,64 Z"/>
+
+    <!-- duplicate effect by drawing rotated petals (manually placed groups) -->
+    <group android:rotation="45" android:pivotX="256" android:pivotY="256">
+        <path
+            android:fillColor="#FF6B8A"
+            android:pathData="M256,64 C296,64 360,160 256,220 C152,160 216,64 256,64 Z"/>
+    </group>
+
+    <group android:rotation="90" android:pivotX="256" android:pivotY="256">
+        <path
+            android:fillColor="#FF6B8A"
+            android:pathData="M256,64 C296,64 360,160 256,220 C152,160 216,64 256,64 Z"/>
+    </group>
+
+    <group android:rotation="135" android:pivotX="256" android:pivotY="256">
+        <path
+            android:fillColor="#FF6B8A"
+            android:pathData="M256,64 C296,64 360,160 256,220 C152,160 216,64 256,64 Z"/>
+    </group>
+
+    <group android:rotation="180" android:pivotX="256" android:pivotY="256">
+        <path
+            android:fillColor="#FF6B8A"
+            android:pathData="M256,64 C296,64 360,160 256,220 C152,160 216,64 256,64 Z"/>
+    </group>
+
+    <group android:rotation="225" android:pivotX="256" android:pivotY="256">
+        <path
+            android:fillColor="#FF6B8A"
+            android:pathData="M256,64 C296,64 360,160 256,220 C152,160 216,64 256,64 Z"/>
+    </group>
+
+    <group android:rotation="270" android:pivotX="256" android:pivotY="256">
+        <path
+            android:fillColor="#FF6B8A"
+            android:pathData="M256,64 C296,64 360,160 256,220 C152,160 216,64 256,64 Z"/>
+    </group>
+
+    <group android:rotation="315" android:pivotX="256" android:pivotY="256">
+        <path
+            android:fillColor="#FF6B8A"
+            android:pathData="M256,64 C296,64 360,160 256,220 C152,160 216,64 256,64 Z"/>
+    </group>
+
+    <!-- Inner smaller petals -->
+    <path
+        android:fillColor="#7CCFE7"
+    android:pathData="M256,120 C284,120 320,180 256,220 C192,180 228,120 256,120 Z"/>
+
+    <group android:rotation="45" android:pivotX="256" android:pivotY="256">
+        <path android:fillColor="#7CCFE7"
+            android:pathData="M256,120 C284,120 320,180 256,220 C192,180 228,120 256,120 Z"/>
+    </group>
+
+    <group android:rotation="90" android:pivotX="256" android:pivotY="256">
+        <path android:fillColor="#7CCFE7"
+            android:pathData="M256,120 C284,120 320,180 256,220 C192,180 228,120 256,120 Z"/>
+    </group>
+
+    <group android:rotation="135" android:pivotX="256" android:pivotY="256">
+        <path android:fillColor="#7CCFE7"
+            android:pathData="M256,120 C284,120 320,180 256,220 C192,180 228,120 256,120 Z"/>
+    </group>
+
+    <group android:rotation="180" android:pivotX="256" android:pivotY="256">
+        <path android:fillColor="#7CCFE7"
+            android:pathData="M256,120 C284,120 320,180 256,220 C192,180 228,120 256,120 Z"/>
+    </group>
+
+    <group android:rotation="225" android:pivotX="256" android:pivotY="256">
+        <path android:fillColor="#7CCFE7"
+            android:pathData="M256,120 C284,120 320,180 256,220 C192,180 228,120 256,120 Z"/>
+    </group>
+
+    <group android:rotation="270" android:pivotX="256" android:pivotY="256">
+        <path android:fillColor="#7CCFE7"
+            android:pathData="M256,120 C284,120 320,180 256,220 C192,180 228,120 256,120 Z"/>
+    </group>
+
+    <group android:rotation="315" android:pivotX="256" android:pivotY="256">
+        <path android:fillColor="#7CCFE7"
+            android:pathData="M256,120 C284,120 320,180 256,220 C192,180 228,120 256,120 Z"/>
+    </group>
+
+    <!-- small central flower (lighter) -->
+    <path
+        android:fillColor="#A0E9FF"
+        android:pathData="M256,160 C276,160 300,190 256,210 C212,190 236,160 256,160 Z"/>
+
+    <path
+        android:fillColor="#FFF176"
+    android:pathData="M256,200 m-20,0 a20,20 0 1,0 40,0 a20,20 0 1,0 -40,0"/>
+
+    <!-- Outer cyan dots placed around -->
+    <!-- dot 0 (right) -->
+    <path android:fillColor="#B9F3FF" android:pathData="M386,256 m-12,0 a12,12 0 1,0 24,0 a12,12 0 1,0 -24,0"/>
+    <!-- dot 45 -->
+    <path android:fillColor="#B9F3FF" android:pathData="M348,348 m-10,0 a10,10 0 1,0 20,0 a10,10 0 1,0 -20,0"/>
+    <!-- dot 90 (bottom) -->
+    <path android:fillColor="#B9F3FF" android:pathData="M256,386 m-12,0 a12,12 0 1,0 24,0 a12,12 0 1,0 -24,0"/>
+    <!-- dot 135 -->
+    <path android:fillColor="#B9F3FF" android:pathData="M164,348 m-10,0 a10,10 0 1,0 20,0 a10,10 0 1,0 -20,0"/>
+    <!-- dot 180 (left) -->
+    <path android:fillColor="#B9F3FF" android:pathData="M126,256 m-12,0 a12,12 0 1,0 24,0 a12,12 0 1,0 -24,0"/>
+    <!-- dot 225 -->
+    <path android:fillColor="#B9F3FF" android:pathData="M164,164 m-10,0 a10,10 0 1,0 20,0 a10,10 0 1,0 -20,0"/>
+    <!-- dot 270 (top) -->
+    <path android:fillColor="#B9F3FF" android:pathData="M256,126 m-12,0 a12,12 0 1,0 24,0 a12,12 0 1,0 -24,0"/>
+    <!-- dot 315 -->
+    <path android:fillColor="#B9F3FF" android:pathData="M348,164 m-10,0 a10,10 0 1,0 20,0 a10,10 0 1,0 -20,0"/>
+
+</vector>

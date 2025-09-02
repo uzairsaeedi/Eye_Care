@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:paddingTop="8dp"
+    android:paddingLeft="12dp"
+    android:paddingRight="12dp">
+
+    <!-- Top bar -->
+    <RelativeLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/baseline_arrow_back_24"
+            android:contentDescription="Back"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:id="@+id/tvScoreLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="Score"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tvScore"
+            android:layout_width="140dp"
+            android:layout_height="44dp"
+            android:layout_below="@id/tvScoreLabel"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="0"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/rounded_score_bg"
+            android:textColor="#FFFFFF" />
+
+        <TextView
+            android:id="@+id/tvTimer"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rounded_timer_bg"
+            android:gravity="center"
+            android:text="10"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <!-- Use a vertical LinearLayout so top area + circle + bottom are positioned predictably -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="72dp">
+
+        <!-- Spacer to push circle toward top like screenshot -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="8dp" />
+
+        <!-- Centered circle container with wrap_content so view measured correctly -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:layout_gravity="center_horizontal">
+
+            <View
+                android:id="@+id/viewColorCircle"
+                android:layout_width="260dp"
+                android:layout_height="260dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/circle_placeholder" />
+        </FrameLayout>
+
+        <View android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" />
+
+        <!-- Bottom color buttons -->
+        <LinearLayout
+            android:id="@+id/bottomButtons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="90dp">
+
+            <View android:id="@+id/btnColor0" android:layout_width="64dp" android:layout_height="64dp"
+                android:layout_margin="4dp" android:background="@drawable/color_button_bg"/>
+            <View android:id="@+id/btnColor1" android:layout_width="64dp" android:layout_height="64dp"
+                android:layout_margin="4dp" android:background="@drawable/color_button_bg"/>
+            <View android:id="@+id/btnColor2" android:layout_width="64dp" android:layout_height="64dp"
+                android:layout_margin="4dp" android:background="@drawable/color_button_bg"/>
+            <View android:id="@+id/btnColor3" android:layout_width="64dp" android:layout_height="64dp"
+                android:layout_margin="4dp" android:background="@drawable/color_button_bg"/>
+            <View android:id="@+id/btnColor4" android:layout_width="64dp" android:layout_height="64dp"
+                android:layout_margin="4dp" android:background="@drawable/color_button_bg"/>
+        </LinearLayout>
+
+        <!-- Ad placeholder -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:background="#F5F5F5"
+            android:padding="8dp" />
+    </LinearLayout>
+
+    <!-- red flash overlay -->
+    <View
+        android:id="@+id/redOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#CCFF0000"
+        android:visibility="gone" />
+
+</FrameLayout>
