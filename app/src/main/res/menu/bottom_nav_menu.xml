@@ -1,6 +1,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/nav_test" android:icon="@mipmap/eye_foreground" android:title="Eye Test" />
     <item android:id="@+id/nav_exercise" android:icon="@mipmap/exercise_foreground" android:title="Eye Exercise" />
+    <item android:id="@+id/nav_camera" android:icon="@mipmap/ic_camera_foreground"  android:title="Camera" />
     <item android:id="@+id/nav_games" android:icon="@mipmap/game_foreground" android:title="Eye Games" />
     <item android:id="@+id/nav_progress" android:icon="@mipmap/progress_foreground" android:title="Progress" />
 </menu>

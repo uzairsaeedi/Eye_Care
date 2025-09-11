@@ -32,7 +32,7 @@
     </androidx.appcompat.widget.Toolbar>
 
     <!-- Center C -->
-    <com.eyecare.LandoltView
+    <com.eyetest.LandoltView
         android:id="@+id/landoltC"
         android:layout_width="200dp"
         android:layout_height="200dp"

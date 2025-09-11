@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "com.eyecare"
+    namespace = "com.eyetest.eyecare.eyesighttest"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.eyecare"
+        applicationId = "com.eyetest.eyecare.eyesighttest"
         minSdk = 24
         targetSdk = 36
         versionCode = 1
@@ -40,4 +40,11 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+    implementation("androidx.camera:camera-core:1.3.0")
+    implementation("androidx.camera:camera-camera2:1.3.0")
+    implementation("androidx.camera:camera-lifecycle:1.3.0")
+    implementation("androidx.camera:camera-view:1.2.0")
+    implementation("androidx.camera:camera-extensions:1.2.0")
+    implementation("com.google.android.material:material:1.9.0")
+    implementation("androidx.recyclerview:recyclerview:1.3.0")
 }
