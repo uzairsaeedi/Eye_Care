@@ -12,10 +12,10 @@
             android:icon="@mipmap/badge_foreground"
             android:title="Remove Ads" />
 
-<!--        <item-->
-<!--            android:id="@+id/nav_rate_us"-->
-<!--            android:icon="@mipmap/star_foreground"-->
-<!--            android:title="Rate Us" />-->
+        <item
+            android:id="@+id/nav_rate_us"
+            android:icon="@mipmap/star_foreground"
+            android:title="Rate Us" />
 
         <item
             android:id="@+id/nav_share_app"

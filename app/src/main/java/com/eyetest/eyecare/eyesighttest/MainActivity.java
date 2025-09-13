@@ -76,9 +76,9 @@ public class MainActivity extends BaseActivity {
                 else if (id == R.id.nav_remove_ads) {
                     CustomDialogUtil.showRemoveAdsDialog(MainActivity.this);
                 }
-//                else if (id == R.id.nav_rate_us) {
-//                    CustomDialogUtil.showRateUsDialog(MainActivity.this);
-//                }
+                else if (id == R.id.nav_rate_us) {
+                    CustomDialogUtil.showRateUsDialog(MainActivity.this);
+                }
                 else if (id == R.id.nav_share_app) {
                     Intent shareIntent = new Intent(Intent.ACTION_SEND);
                     shareIntent.setType("text/plain");
@@ -139,7 +139,8 @@ public class MainActivity extends BaseActivity {
                     intent = new Intent(MainActivity.this, Progress.class)
                             .putExtra("startTab", 0);
                 } else if (id == R.id.nav_camera) {
-                    intent = new Intent(MainActivity.this, CameraActivity.class);
+                    intent = new Intent(MainActivity.this, CameraActivity.class)
+                            .putExtra("startTab", 0);
                 }
 
                 if (intent != null) {

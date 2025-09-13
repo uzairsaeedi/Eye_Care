@@ -72,9 +72,9 @@ public class EyeGames extends BaseActivity {
                 else if (id == R.id.nav_remove_ads) {
                     CustomDialogUtil.showRemoveAdsDialog(EyeGames.this);
                 }
-//                else if (id == R.id.nav_rate_us) {
-//                    CustomDialogUtil.showRateUsDialog(EyeGames.this);
-//                }
+                else if (id == R.id.nav_rate_us) {
+                    CustomDialogUtil.showRateUsDialog(EyeGames.this);
+                }
                 else if (id == R.id.nav_share_app) {
                     Intent shareIntent = new Intent(Intent.ACTION_SEND);
                     shareIntent.setType("text/plain");
@@ -108,8 +108,8 @@ public class EyeGames extends BaseActivity {
 
         bottomNav = findViewById(R.id.bottom_nav_include);
         if (bottomNav != null) {
-            bottomNav.setSelectedItemId(R.id.nav_test);
-            currentNavItemId = R.id.nav_test;
+            bottomNav.setSelectedItemId(R.id.nav_games);
+            currentNavItemId = R.id.nav_games;
 
             bottomNav.setOnItemSelectedListener(menuItem -> {
                 int id = menuItem.getItemId();
@@ -132,7 +132,8 @@ public class EyeGames extends BaseActivity {
                     intent = new Intent(EyeGames.this, Progress.class)
                             .putExtra("startTab", 0);
                 } else if (id == R.id.nav_camera) {
-                    intent = new Intent(EyeGames.this, CameraActivity.class);
+                    intent = new Intent(EyeGames.this, CameraActivity.class)
+                            .putExtra("startTab", 0);
                 }
 
                 if (intent != null) {
